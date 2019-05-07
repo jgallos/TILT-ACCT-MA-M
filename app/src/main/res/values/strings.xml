@@ -4,4 +4,13 @@
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_logout">Logout</string>
+    <string name="title_activity_avail_classes">AvailClassesActivity</string>
+    <string name="tt_time_gmt">%1$s</string>
+
+    <string-array name="available_classes">
+        <item>Calculus</item>
+        <item>Java Programming</item>
+        <item>Android Development</item>
+    </string-array>
+    <string name="title_activity_class_review">ClassReviewActivity</string>
 </resources>

@@ -26,6 +26,14 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AvailClassesActivity"
+            android:label="@string/title_activity_avail_classes"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ClassReviewActivity"
+            android:label="@string/title_activity_class_review"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
