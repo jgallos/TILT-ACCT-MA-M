@@ -17,45 +17,54 @@
             android:id="@+id/classTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:text="Class:" />
 
         <TextView
             android:id="@+id/instructorTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="10dp"
             android:text="Instructor: " />
 
         <TextView
             android:id="@+id/scheduleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="10dp"
             android:text="Schedule: " />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/attendanceButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:text="Attendance" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/feedbackButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="Feedback" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/academicButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:text="Academic Uploads" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

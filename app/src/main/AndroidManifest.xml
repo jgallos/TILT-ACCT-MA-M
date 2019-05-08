@@ -39,6 +39,10 @@
         <activity
             android:name=".NotifyActivity"
             android:label="@string/title_activity_notify"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AttendanceActivity"
+            android:label="@string/title_activity_attendance"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
