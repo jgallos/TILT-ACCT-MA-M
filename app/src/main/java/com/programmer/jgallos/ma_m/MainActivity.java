@@ -2,9 +2,12 @@ package com.programmer.jgallos.ma_m;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.NotificationChannel;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -73,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show(); */
                 //Toast.makeText(MainActivity.this,"dgdg", Toast.LENGTH_SHORT).show();
 
-                Notification.Builder mBuilder =
+                /* Notification.Builder mBuilder =
                         new Notification.Builder(MainActivity.this);
 
                 //Create the intent that’ll fire when the user taps the notification//
@@ -87,13 +90,44 @@ public class MainActivity extends AppCompatActivity {
                 mBuilder.setSmallIcon(R.drawable.login);
                 mBuilder.setContentTitle("Feedback Alert");
                 mBuilder.setContentText("DEFCON 1 has been raised by an MA-S system!");
-                
+
 
                 NotificationManager mNotificationManager =
 
                         (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-                mNotificationManager.notify(001, mBuilder.getNotification());
+                mNotificationManager.notify(001, mBuilder.getNotification()); */
+
+
+                NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                String NOTIFICATION_CHANNEL_ID = "my_channel_id_01";
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "My Notifications", NotificationManager.IMPORTANCE_HIGH);
+
+                    // Configure the notification channel.
+                    notificationChannel.setDescription("Channel description");
+                    notificationChannel.enableLights(true);
+                    notificationChannel.setLightColor(Color.RED);
+                    notificationChannel.setVibrationPattern(new long[]{0, 1000, 500, 1000});
+                    notificationChannel.enableVibration(true);
+                    notificationManager.createNotificationChannel(notificationChannel);
+                }
+
+
+                NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(MainActivity.this, NOTIFICATION_CHANNEL_ID);
+
+                notificationBuilder.setAutoCancel(true)
+                        .setDefaults(Notification.DEFAULT_ALL)
+                        .setWhen(System.currentTimeMillis())
+                        .setSmallIcon(R.drawable.login)
+                        .setTicker("Hearty365")
+                       // .setPriority(Notification.IMPORTANCE_HIGH)
+                        .setContentTitle("Default notification")
+                        .setContentText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+                        .setContentInfo("Info");
+
+                notificationManager.notify(/*notification id*/1, notificationBuilder.build());
 
             }
         });
