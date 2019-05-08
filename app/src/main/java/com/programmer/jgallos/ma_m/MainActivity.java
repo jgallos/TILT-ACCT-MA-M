@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 mNotificationManager.notify(001, mBuilder.getNotification()); */
 
 
-                NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+             /*   NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 String NOTIFICATION_CHANNEL_ID = "my_channel_id_01";
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -126,8 +126,11 @@ public class MainActivity extends AppCompatActivity {
                         .setContentTitle("Default notification")
                         .setContentText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
                         .setContentInfo("Info");
+                */
+                //notificationManager.notify(/*notification id*/1, notificationBuilder.build());
 
-                notificationManager.notify(/*notification id*/1, notificationBuilder.build());
+            Intent intent = new Intent(MainActivity.this, NotifyActivity.class);
+            startActivity(intent);
 
             }
         });

@@ -13,4 +13,5 @@
         <item>Android Development</item>
     </string-array>
     <string name="title_activity_class_review">ClassReviewActivity</string>
+    <string name="title_activity_notify">NotifyActivity</string>
 </resources>
