@@ -20,7 +20,8 @@
             android:layout_margin="10dp"
             android:ems="10"
             android:hint="Notification Title"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColorLink="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/notifContentEditText"
@@ -28,8 +29,10 @@
             android:layout_height="150dp"
             android:layout_margin="10dp"
             android:ems="10"
+            android:gravity="top"
             android:hint="Notification Content"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:textColorLink="@color/colorPrimary" />
 
         <Button
             android:id="@+id/sendNotifButton"
@@ -37,5 +40,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Send Notification" />
+
+        <TextView
+            android:id="@+id/textViewNTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:visibility="invisible" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
