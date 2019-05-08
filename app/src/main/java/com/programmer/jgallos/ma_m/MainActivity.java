@@ -78,14 +78,16 @@ public class MainActivity extends AppCompatActivity {
 
                 //Create the intent that’ll fire when the user taps the notification//
 
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.androidauthority.com/"));
+                //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.androidauthority.com/"));
+                Intent intent = new Intent(MainActivity.this, AvailClassesActivity.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this, 0, intent, 0);
 
                 mBuilder.setContentIntent(pendingIntent);
 
                 mBuilder.setSmallIcon(R.drawable.login);
-                mBuilder.setContentTitle("My notification");
-                mBuilder.setContentText("Hello World!");
+                mBuilder.setContentTitle("Feedback Alert");
+                mBuilder.setContentText("DEFCON 1 has been raised by an MA-S system!");
+                
 
                 NotificationManager mNotificationManager =
 
