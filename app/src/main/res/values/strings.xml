@@ -17,4 +17,5 @@
     <string name="title_activity_attendance">AttendanceActivity</string>
     <string name="title_activity_feedback">FeedbackActivity</string>
     <string name="title_activity_single_feedback">SingleFeedbackActivity</string>
+    <string name="title_activity_feedback_reply">FeedbackReplyActivity</string>
 </resources>
