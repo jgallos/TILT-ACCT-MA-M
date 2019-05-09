@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -65,9 +67,9 @@ public class SingleFeedbackActivity extends AppCompatActivity {
         escalateMarkerRef = FirebaseDatabase.getInstance().getReference().child("Reply_" + post_key);
 
         //Toast.makeText(this,mDatabase.child(post_key).toString(),Toast.LENGTH_SHORT).show();
-        /* recyclerView = (RecyclerView)findViewById(R.id.recyclerViewSingleFeed);
+        recyclerView = (RecyclerView)findViewById(R.id.recyclerViewSingleFeed);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true); */
+        recyclerView.setHasFixedSize(true);
 
         mDatabase.child(post_key).addValueEventListener(new ValueEventListener() {
             @Override
@@ -90,6 +92,64 @@ public class SingleFeedbackActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseRecyclerAdapter<ReplyRecord, SFBViewHolder> FBRA = new FirebaseRecyclerAdapter<ReplyRecord, SingleFeedbackActivity.SFBViewHolder>(
+                ReplyRecord.class,
+                R.layout.reply_list,
+                SingleFeedbackActivity.SFBViewHolder.class,
+                escalateMarkerRef
+        ) {
+            @Override
+            protected void populateViewHolder(SingleFeedbackActivity.SFBViewHolder viewHolder, ReplyRecord model, int position) {
+
+
+                final String reply_key = getRef(position).getKey().toString();
+
+                viewHolder.setDate(model.getDate());
+                viewHolder.setTime(model.getTime());
+                viewHolder.setReply(model.getReply());
+
+
+                //Toast.makeText(ViewAttendanceActivity.this, model.getSignout().toString(), Toast.LENGTH_LONG).show();
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+            }
+        };
+        recyclerView.setAdapter(FBRA);
+    }
+
+    public static class SFBViewHolder extends RecyclerView.ViewHolder {
+        View mView;
+
+        public SFBViewHolder(View itemView) {
+            super(itemView);
+            mView=itemView;
+        }
+
+        public void setDate(String date) {
+            TextView response_date = mView.findViewById(R.id.textViewResponseDate);
+            response_date.setText("Date: " + date);
+        }
+
+        public void setTime(String time) {
+            TextView response_time = mView.findViewById(R.id.textViewResponseTime);
+            response_time.setText("Time: " + time);
+        }
+
+        public void setReply(String reply) {
+            TextView response_reply = mView.findViewById(R.id.textViewResponse);
+            response_reply.setText(reply);
+        }
 
     }
 

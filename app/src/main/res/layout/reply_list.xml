@@ -19,7 +19,7 @@
 
             <TextView
                 android:id="@+id/textViewResponseDate"
-                android:layout_width="143dp"
+                android:layout_width="107dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
