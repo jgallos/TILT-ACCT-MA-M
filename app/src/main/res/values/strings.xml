@@ -18,4 +18,5 @@
     <string name="title_activity_feedback">FeedbackActivity</string>
     <string name="title_activity_single_feedback">SingleFeedbackActivity</string>
     <string name="title_activity_feedback_reply">FeedbackReplyActivity</string>
+    <string name="title_activity_acad">AcadActivity</string>
 </resources>
