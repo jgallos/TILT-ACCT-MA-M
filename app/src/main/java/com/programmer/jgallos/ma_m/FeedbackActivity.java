@@ -62,9 +62,21 @@ public class FeedbackActivity extends AppCompatActivity {
         ) {
             @Override
             protected void populateViewHolder(FeedbackActivity.FeedbackViewHolder viewHolder, FeedbackRecord model, int position) {
+                final String feedback_key = getRef(position).getKey().toString();
+
                 viewHolder.setDesc(model.getDesc());
                 viewHolder.setLevel(model.getLevel());
                 viewHolder.setStatus(model.getStatus());
+
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent singleFeedback = new Intent(FeedbackActivity.this, SingleFeedbackActivity.class);
+                        singleFeedback.putExtra("feedbackID", feedback_key);
+                        singleFeedback.putExtra("subjectReviewed", subjectBuffer);
+                        startActivity(singleFeedback);
+                    }
+                });
             }
         };
         recyclerView.setAdapter(FBRA);
