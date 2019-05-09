@@ -59,6 +59,10 @@
         <activity
             android:name=".AcadActivity"
             android:label="@string/title_activity_acad"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MySubjectsActivity"
+            android:label="@string/title_activity_my_subjects"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

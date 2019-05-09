@@ -19,4 +19,5 @@
     <string name="title_activity_single_feedback">Feedback Review</string>
     <string name="title_activity_feedback_reply">Reply to Feedback</string>
     <string name="title_activity_acad">Academic Records</string>
+    <string name="title_activity_my_subjects">My Subjects</string>
 </resources>
