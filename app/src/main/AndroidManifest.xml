@@ -43,6 +43,10 @@
         <activity
             android:name=".AttendanceActivity"
             android:label="@string/title_activity_attendance"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FeedbackActivity"
+            android:label="@string/title_activity_feedback"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

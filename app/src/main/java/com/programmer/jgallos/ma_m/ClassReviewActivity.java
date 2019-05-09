@@ -65,6 +65,15 @@ public class ClassReviewActivity extends AppCompatActivity {
             }
         });
 
+        buttonFeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClassReviewActivity.this, FeedbackActivity.class);
+                intent.putExtra("subjectReviewed",subjectBuffer);
+                startActivity(intent);
+            }
+        });
+
     }
 
 }
