@@ -1,10 +1,7 @@
 package com.programmer.jgallos.ma_m;
 
-import android.util.Log;
-
 public class AcadRecord {
     private String title, desc, imageUrl, username, uid, date;
-    private static final String TAG = AcadRecord.class.getSimpleName();
 
     public AcadRecord(String title, String desc, String imageUrl, String username, String uid, String date) {
         this.title = title;
@@ -49,10 +46,7 @@ public class AcadRecord {
     public  String getUsername() {
         return username;
     }
-    public String getDesc() {
-        Log.d(TAG,desc);
-        return desc;
-    }
+    public String getDesc() { return desc; }
     public String getUid() {
         return uid;
     }
